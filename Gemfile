@@ -19,7 +19,7 @@ gem "puma", "~> 5.0"
 gem "importmap-rails"
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
-gem "turbo-rails"
+# gem "turbo-rails"
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
@@ -61,6 +61,10 @@ group :test do
   gem "capybara"
   gem "launchy"
   gem "simplecov"
+  gem "vcr"
+  gem "webmock"
+  gem "shoulda-matchers"
+  gem "orderly"
 end
 
 group :development do
@@ -73,4 +77,3 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 end
-
