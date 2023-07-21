@@ -2,11 +2,11 @@ require 'rails_helper'
 
 RSpec.describe 'foods index', type: :feature do
   describe 'all the things on the page' do
-    xit 'should display ten items related to search' do
+    it 'should display ten items related to search' do
       visit root_path
 
-      fill_in(:search, with: 'sweet potatoes')
-      click_button(:search)
+      fill_in(:q, with: 'sweet potatoes')
+      click_button('Search')
 
       expect(page).to have_content('Total Results: 55579')
       expect(page).to have_content('SWEET POTATOES') #[foods][description] foods.each do food food[:description]

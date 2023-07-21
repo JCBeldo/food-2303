@@ -1,10 +1,10 @@
-class FoodService
-  def food_search_url
-    get_url('/search')
+class UsdaFoodsService
+  def food_search_url(search)
+    get_url("/fdc/v1/foods/search?query=#{search}")
   end
 
   def conn
-    Faraday.new(url: 'https://api.nal.usda.gov/fdc/v1/foods') do |f|
+    Faraday.new(url: 'https://api.nal.usda.gov') do |f|
       f.params['api_key'] = ENV['USDA_KEY']
     end
   end
