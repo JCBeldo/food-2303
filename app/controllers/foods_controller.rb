@@ -1,8 +1,6 @@
 class FoodsController < ApplicationController
- def index
-  # if params[:q]
+  def index
     @total_hits = UsdaFoodFacade.new.foods_search(params[:q]).total_hits
-    @
-  # end
- end
+    @search_results = UsdaFoodFacade.new.foods_search(params[:q]).foods
+  end
 end

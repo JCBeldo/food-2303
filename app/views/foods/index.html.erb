@@ -1,3 +1,13 @@
 <h1>Search results for <%= "#{params[:q]}" %></h1>
 
 Total Results: <%= @total_hits %>
+
+<ul>
+  <% @search_results[0..9].each do |food| %>
+    <li>Name: <%= food[:description] %></li>
+    <li>UPC: <%= food[:gtinUpc] %></li>
+    <li>Brand: <%= food[:brandOwner] %></li>
+    <li>Ingredients: <%= food[:ingredients] %></li>
+    <br />
+  <% end %>
+</ul>
